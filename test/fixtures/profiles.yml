@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  login: MyString
+  nk_id: MyString
+  url: MyString
+  email: MyString
+  tos: false
+  status: 1
+
+two:
+  login: MyString
+  nk_id: MyString
+  url: MyString
+  email: MyString
+  tos: false
+  status: 1

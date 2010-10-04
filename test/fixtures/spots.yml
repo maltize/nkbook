@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  profile_id: 1
+  duration: 1
+  valid_from: 2010-10-04 23:30:24
+  valid_to: 2010-10-04 23:30:24
+  status: 1
+
+two:
+  profile_id: 1
+  duration: 1
+  valid_from: 2010-10-04 23:30:24
+  valid_to: 2010-10-04 23:30:24
+  status: 1
