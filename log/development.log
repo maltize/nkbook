@@ -66,3 +66,11 @@ Migrating to CreateFeedbacks (20101004213055)
   [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20101004213055')[0m
   [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20101004212935')[0m
   [4;36;1mSQL (2.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20101004213024')[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-05 22:05:01) [GET]
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-10-05 22:05:11) [GET]
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
