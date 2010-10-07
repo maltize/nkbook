@@ -1,1 +1,13 @@
 Hello World!
+
+<table cellspacing="1" cellpadding="0">
+  <% 50.times do |col| %>
+    <tr>
+      <% 20.times do |row| %>
+        <td>
+          <%= image_tag (@spots[col * 20 + row] ? "assets/" + @spots[col * 20 + row].profile.nk_id : "default_profile_s.png") %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

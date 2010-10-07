@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20101004213055) do
   create_table "spots", :force => true do |t|
     t.integer  "profile_id"
     t.integer  "duration"
+    t.integer  "position"
     t.datetime "valid_from"
     t.datetime "valid_to"
     t.integer  "status"
