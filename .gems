@@ -1,3 +1,5 @@
 rails --version 2.3.4
 mechanize --version '>=1.0.0'
 nokogiri --version '>=1.4.3.1'
+RubyInline --version '>=3.8.6'
+image_science --version '>=1.2.1'
