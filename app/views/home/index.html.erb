@@ -4,8 +4,13 @@ Hello World!
   <% 50.times do |col| %>
     <tr>
       <% 20.times do |row| %>
+        <% index = col * 20 + row %>
         <td>
-          <%= image_tag (@spots[col * 20 + row] ? "assets/" + @spots[col * 20 + row].profile.nk_id : "default_profile_s.png") %>
+          <% if @spots[index] %>
+            <%= link_to image_tag(@spots[index].profile.thumbnail_path), profile_path(@spots[index].profile) %>
+          <% else %>
+            <%= link_to image_tag("default_profile_s.png"), new_profile_path(:spot_position => index) %>
+          <% end %>
         </td>
       <% end %>
     </tr>

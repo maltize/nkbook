@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20101004213055) do
     t.string   "nk_id"
     t.string   "url"
     t.string   "email"
+    t.text     "html"
     t.boolean  "tos"
     t.integer  "status"
     t.datetime "created_at"

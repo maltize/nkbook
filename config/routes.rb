@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.profile 'profile', :controller => 'home', :action => 'profile'
+  map.resources :profiles
+
+  map.profile_parse 'profile_parse', :controller => 'home', :action => 'profile_parse'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

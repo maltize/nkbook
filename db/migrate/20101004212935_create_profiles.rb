@@ -5,6 +5,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :nk_id
       t.string :url
       t.string :email
+      t.text :html
       t.boolean :tos
       t.integer :status
 
