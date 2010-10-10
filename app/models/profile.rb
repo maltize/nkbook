@@ -16,9 +16,11 @@
 
 class Profile < ActiveRecord::Base
 
-  # TODO validate widget url
-
-  validates_presence_of :url, :email, :tos
+  validates_presence_of :url, :html, :email, :tos
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates_format_of :url,   :with => /http:\/\/nk\.pl\/card\/\d+\/\w+/i
+  validates_format_of :html,  :with => /<script.+src=.+http:\/\/nk\.pl\/card\/js\/\d+\/\w+.+><\/script>/i
+  validate :three_per_user, :on => :create
 
   has_one :spot, :dependent => :destroy
 
@@ -26,6 +28,12 @@ class Profile < ActiveRecord::Base
 
   STORE_PATH = RAILS_ROOT + '/public/assets/'
   READ_PATH = '/assets/'
+
+  def thumbnail_path
+    READ_PATH + nk_id + '_cropped.png'
+  end
+
+private
 
   def harvester
     self.nk_id = url.match(/\/(\d+)\//)[1]
@@ -55,8 +63,8 @@ class Profile < ActiveRecord::Base
     end
   end
 
-  def thumbnail_path
-    READ_PATH + nk_id + '_cropped.png'
+  def three_per_user
+    errors.add_to_base("Można posiadać tylko 3 aktywne miejsca!") if Spot.valid.with_url(url).count == 3
   end
 
 end

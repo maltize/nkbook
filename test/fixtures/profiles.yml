@@ -1,22 +1,3 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  login: MyString
-  nk_id: MyString
-  url: MyString
-  email: MyString
-  tos: false
-  status: 1
-
-two:
-  login: MyString
-  nk_id: MyString
-  url: MyString
-  email: MyString
-  tos: false
-  status: 1
-
-
 # == Schema Information
 #
 # Table name: profiles
@@ -33,3 +14,22 @@ two:
 #  updated_at :datetime
 #
 
+one:
+  id: 1
+  login: MyString
+  nk_id: MyString
+  url: 'http://nk.pl/card/123/abc'
+  html: "<script width=\"180\" id=\"nk_card\" type=\"text/javascript\" charset=\"UTF-8\" src=\"http://nk.pl/card/js/123/abc\"></script>"
+  email: "dummy@localhost.lol"
+  tos: true
+  status: 1
+
+two:
+  id: 2
+  login: MyString
+  nk_id: MyString
+  url: 'http://nk.pl/card/123/abc'
+  html: "<script width=\"180\" id=\"nk_card\" type=\"text/javascript\" charset=\"UTF-8\" src=\"http://nk.pl/card/js/123/abc\"></script>"
+  email: "dummy@localhost.lol"
+  tos: true
+  status: 1

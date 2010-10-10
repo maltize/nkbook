@@ -1,15 +1,3 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  username: MyString
-  message: MyText
-  status: 1
-
-two:
-  username: MyString
-  message: MyText
-  status: 1
-
 # == Schema Information
 #
 # Table name: feedbacks
@@ -22,3 +10,12 @@ two:
 #  updated_at :datetime
 #
 
+one:
+  username: UserOne
+  message: MyText
+  status: 1
+
+two:
+  username: UserTwo
+  message: MyText
+  status: 1
