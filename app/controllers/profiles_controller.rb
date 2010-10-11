@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
 
   def index
-    @profiles = Profile.all
+    @spots = Hash[*Spot.valid.collect { |u| [u.position, u] }.flatten]
   end
 
   def show

@@ -33,5 +33,6 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
-  map.root :controller => "home"
+  map.root :controller => "profiles"
+
 end

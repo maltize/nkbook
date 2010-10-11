@@ -1,22 +1,16 @@
-<h1>Listing profiles</h1>
-
 <table>
-  <tr>
-    <th>Url</th>
-    <th>Email</th>
-    <th>Tos</th>
-  </tr>
-
-<% @profiles.each do |profile| %>
-  <tr>
-    <td><%=h profile.url %></td>
-    <td><%=h profile.email %></td>
-    <td><%=h profile.tos %></td>
-    <td><%= link_to 'Show', profile %></td>
-  </tr>
-<% end %>
+  <% 50.times do |col| %>
+    <tr>
+      <% 20.times do |row| %>
+        <% index = col * 20 + row %>
+        <td>
+          <% if @spots[index] %>
+            <%= link_to image_tag(@spots[index].profile.thumbnail_path), profile_path(@spots[index].profile) %>
+          <% else %>
+            <%= link_to image_tag("default_profile_s.png"), new_profile_path(:spot_position => index) %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New profile', new_profile_path %>

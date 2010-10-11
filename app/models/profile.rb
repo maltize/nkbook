@@ -57,7 +57,7 @@ private
     end
 
     ImageScience.with_image(file_path) do |img|
-      img.cropped_thumbnail(39) do |thumb|
+      img.cropped_thumbnail(40) do |thumb|
         thumb.save STORE_PATH + nk_id + '_cropped.png'
       end
     end

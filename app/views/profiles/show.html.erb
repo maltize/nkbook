@@ -1,13 +1,7 @@
 <p>
-  <b>Url:</b>
-  <%=h @profile.url %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%=h @profile.email %>
+  <%= link_to 'Link do wizytówki', @profile.url %>
 </p>
 
 <%= @profile.html %>
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Cofnij', root_path %>

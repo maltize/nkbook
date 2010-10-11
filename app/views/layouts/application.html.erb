@@ -4,12 +4,15 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>NKBook.pl</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/text.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/960.css" />
+    <%= stylesheet_link_tag 'scaffold' %>
     <!-- <script type="text/javascript" src="javascripts/prototype.js"></script>
     <script type="text/javascript" src="javascripts/scriptaculous.js?load=effects,builder"></script> -->
-    <%= stylesheet_link_tag 'scaffold' %>
   </head>
   <body>
-    <div>
+    <div class="container_16">
       <% if flash[:notice] -%>
         <p style="color: green"><%= flash[:notice] %></p>
         <% flash[:notice] = nil %>
@@ -20,8 +23,39 @@
       <% end %>
     </div>
 
-    <div>
-      <%= yield %>
+    <!-- TOP MENU -->
+    <div id="menu">
+      <div class="container_16">
+        <div class="grid_1">&nbsp;</div>
+        <div class="grid_5"><%= image_tag 'logo.png' %></div>
+        <div class="grid_9">
+          <span><%= link_to 'Początek', root_path %></span>
+          <span><%= link_to 'Dlaczego?', '#' %></span>
+          <span><%= link_to 'FAQ', '#' %></span>
+          <span><%= link_to 'Kontakt', '#' %></span>
+        </div>
+        <div class="grid_1">&nbsp;</div>
+      </div>
+    </div>
+    <div class="clear"></div>
+
+    <!-- CONTENT -->
+    <div id="main" class="container_16">
+      <div class="grid_1">&nbsp;</div>
+      <div class="grid_14">
+        <%= yield %>
+      </div>
+      <div class="grid_1">&nbsp;</div>
+    </div>
+    <div class="clear"></div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+      <div>
+        <span>Copyright NKBook.pl 2010</span>
+        <span><%= link_to 'Regulamin', '#' %></span>
+        <span><%= link_to 'Prywatność', '#' %></span>
+      </div>
     </div>
 
     <%# render :partial => 'shared/google_analytics' %>
