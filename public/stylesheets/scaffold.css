@@ -96,6 +96,26 @@ table {
   text-decoration: underline;
 }
 
+#flash_message {
+  text-align: center;
+}
+
+#flash_message p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 2px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#flash_message #flash_notice {
+  background-color: #66B3FF;
+}
+
+#flash_message #flash_error {
+  background-color: #005CB8;
+}
+
 #footer {
   height: 30px;
   padding-top: 11px;

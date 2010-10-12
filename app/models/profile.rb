@@ -16,7 +16,9 @@
 
 class Profile < ActiveRecord::Base
 
-  validates_presence_of :url, :html, :email, :tos
+  validates_presence_of :url, :html, :email
+  validates_presence_of :spot
+  validates_presence_of :tos, :message => 'musi być zatwierdzony'
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_format_of :url,   :with => /http:\/\/nk\.pl\/card\/\d+\/\w+/i
   validates_format_of :html,  :with => /<script.+src=.+http:\/\/nk\.pl\/card\/js\/\d+\/\w+.+><\/script>/i
