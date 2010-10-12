@@ -1,6 +1,8 @@
 body {
   background-color: #fff;
-  color: #333;
+  background-image: url('/images/pattern_01.png');
+  background-repeat: repeat;
+  color: #000;
 }
 
 body, p, ol, ul, td {
@@ -94,6 +96,26 @@ table {
 
 #menu .grid_9 span a:hover {
   text-decoration: underline;
+}
+
+#flash_message {
+  text-align: center;
+}
+
+#flash_message p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 2px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#flash_message #flash_notice {
+  background-color: #66B3FF;
+}
+
+#flash_message #flash_error {
+  background-color: #005CB8;
 }
 
 #footer {

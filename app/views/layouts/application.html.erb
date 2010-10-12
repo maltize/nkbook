@@ -12,16 +12,6 @@
     <script type="text/javascript" src="javascripts/scriptaculous.js?load=effects,builder"></script> -->
   </head>
   <body>
-    <div class="container_16">
-      <% if flash[:notice] -%>
-        <p style="color: green"><%= flash[:notice] %></p>
-        <% flash[:notice] = nil %>
-      <% end -%>
-      <% if flash[:error] %>
-        <p style="color: red"><%= flash[:error] %></p>
-        <% flash[:error] = nil %>
-      <% end %>
-    </div>
 
     <!-- TOP MENU -->
     <div id="menu">
@@ -36,6 +26,19 @@
         </div>
         <div class="grid_1">&nbsp;</div>
       </div>
+    </div>
+    <div class="clear"></div>
+
+    <!-- FLASH MESSAGE -->
+    <div id="flash_message">
+      <% if flash[:notice] %>
+        <p id="flash_notice"><%= flash[:notice] %></p>
+        <% flash[:notice] = nil %>
+      <% end %>
+      <% if flash[:error] %>
+        <p id="flash_error"><%= flash[:error] %></p>
+        <% flash[:error] = nil %>
+      <% end %>
     </div>
     <div class="clear"></div>
 
