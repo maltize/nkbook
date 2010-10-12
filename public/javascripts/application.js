@@ -1,2 +1,20 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function(){
+
+  function showWidget() {
+    $('#widget' + $(this)[0].id).removeClass('hidden');
+  }
+
+  function hideWidget() {
+    $('#widget' + $(this)[0].id).addClass('hidden');
+  }
+
+  var configHover = {
+    interval: 1000,
+    timeout: 1000,
+    over: showWidget,
+    out: hideWidget
+  };
+
+  $("div.widget_observer").hoverIntent( configHover );
+
+});
