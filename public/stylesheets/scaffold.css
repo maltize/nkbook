@@ -1,6 +1,6 @@
 body {
-  background-color: #fff;
-  background-image: url('/images/pattern_01.png');
+  background-color: #246BB3;
+  background-image: url('/images/pattern.png');
   background-repeat: repeat;
   color: #000;
 }
@@ -152,6 +152,7 @@ table {
 
 #main .grid_14 table {
   margin-bottom: 0;
+  background-color: #fff;
 }
 
 input[type="text"] {

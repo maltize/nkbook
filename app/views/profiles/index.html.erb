@@ -7,7 +7,7 @@
           <% if @spots[index] %>
             <%= link_to image_tag(@spots[index].profile.thumbnail_path), profile_path(@spots[index].profile) %>
           <% else %>
-            <%= link_to image_tag("default_profile_s.png"), new_profile_path(:spot_position => index) %>
+            <%= link_to image_tag("null_profile.png"), new_profile_path(:spot_position => index) %>
           <% end %>
         </td>
       <% end %>
