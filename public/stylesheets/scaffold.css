@@ -1,6 +1,8 @@
 body {
   background-color: #fff;
-  color: #333;
+  background-image: url('/images/pattern_01.png');
+  background-repeat: repeat;
+  color: #000;
 }
 
 body, p, ol, ul, td {
