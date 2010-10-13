@@ -6,10 +6,10 @@
         <td>
           <% if @spots[index] %>
             <div id="_<%= index %>" class="widget_observer">
-            <%= link_to image_tag(@spots[index].profile.thumbnail_path), profile_path(@spots[index].profile) %>
-            <div id="widget_<%= index %>" class="widget hidden">
-              <%= @spots[index].profile.html %>
-            </div>
+              <%= link_to image_tag(@spots[index].profile.thumbnail_path), profile_path(@spots[index].profile) %>
+              <div id="widget_<%= index %>" class="widget hidden">
+                <%= @spots[index].profile.html %>
+              </div>
             </div>
           <% else %>
             <%= link_to image_tag("null_profile.png"), new_profile_path(:spot_position => index), :title => 'Wolne miejsce!' %>
