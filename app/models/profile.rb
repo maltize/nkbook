@@ -31,38 +31,53 @@ class Profile < ActiveRecord::Base
   STORE_PATH = RAILS_ROOT + '/public/assets/'
   READ_PATH = '/assets/'
 
+  OK       = 1
+  NO_PHOTO = 2
+
   def thumbnail_path
-    READ_PATH + nk_id + '_cropped.png'
+    if status == NO_PHOTO
+      return '/images/no_photo_profile.png'
+    else
+      return READ_PATH + nk_id + '_cropped.png'
+    end
   end
 
 private
 
   def harvester
     self.nk_id = url.match(/\/(\d+)\//)[1]
+    self.status = OK
     self.save
 
     page = Mechanize.new.get url
     nBody = Nokogiri::HTML(page.body)
-    photo_url = nBody.xpath("//a[@class = 'card_photo']/img").first.values.first
+
     if (element = nBody.xpath("//li[@id = 'card_nick']/span").first)
       self.login = element.children.last.inner_text.strip
       self.save
     end
 
-    file_path = STORE_PATH + nk_id + '.jpg'
-    Dir.mkdir(STORE_PATH) unless File.directory?(STORE_PATH)
-    unless File.exists?(file_path)
-      image = Mechanize.new.get_file photo_url
-      open(file_path, "wb") do |file|
-        file.write(image)
+    if (element = nBody.xpath("//a[@class = 'card_photo']/img").first)
+      photo_url = element.values.first
+
+      file_path = STORE_PATH + nk_id + '.jpg'
+      Dir.mkdir(STORE_PATH) unless File.directory?(STORE_PATH)
+      unless File.exists?(file_path)
+        image = Mechanize.new.get_file photo_url
+        open(file_path, "wb") do |file|
+          file.write(image)
+        end
       end
+
+      ImageScience.with_image(file_path) do |img|
+        img.cropped_thumbnail(40) do |thumb|
+          thumb.save STORE_PATH + nk_id + '_cropped.png'
+        end
+      end
+    else
+      self.update_attribute :status, NO_PHOTO
     end
 
-    ImageScience.with_image(file_path) do |img|
-      img.cropped_thumbnail(40) do |thumb|
-        thumb.save STORE_PATH + nk_id + '_cropped.png'
-      end
-    end
   end
 
   def three_per_user
