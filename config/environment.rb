@@ -46,3 +46,6 @@ Rails::Initializer.run do |config|
 end
 
 ActionView::Base.field_error_proc = proc { |input, instance| input } 
+
+ExceptionNotifier.exception_recipients = %w(maltize@gmail.com)
+ExceptionNotifier.sender_address = %("NKBook.pl Application Error" <error@nkbook.pl>)

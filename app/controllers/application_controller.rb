@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   filter_parameter_logging :password
 
+  include ExceptionNotifiable
+
   USER_NAME, PASSWORD = "nkbook", "nkbook.123"
 
   before_filter :authenticate unless RAILS_ENV == 'test'
