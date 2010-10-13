@@ -1,3 +1,4 @@
+<% spots_widgets = {} %>
 <table>
   <% 50.times do |col| %>
     <tr>
@@ -5,6 +6,7 @@
         <% index = col * 20 + row %>
         <td>
           <% if @spots[index] %>
+            <% spots_widgets[index] = @spots[index].profile.html %>
             <div id="_<%= index %>" class="widget_observer">
               <%= link_to image_tag(@spots[index].profile.thumbnail_path), profile_path(@spots[index].profile) %>
               <div id="widget_<%= index %>" class="widget hidden">
@@ -19,3 +21,10 @@
     </tr>
   <% end %>
 </table>
+
+<script type="text/javascript">
+  var widgetScripts = new Array();
+  <% spots_widgets.each do |key, value| %>
+    widgetScripts[<%= key %>] = '<%= escape_javascript(value) %>';
+  <% end %>
+</script>
