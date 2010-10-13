@@ -1,7 +1,7 @@
 <h1>Dodaj swóją wizytówkę</h1>
 
 <% form_for(@profile) do |f| %>
-  <%= f.error_messages %>
+  <%= error_messages_for :profile, :header_message => "Spróbuj ponownie!", :message => "Wizytówka nie została zapisana, ponieważ:" %>
 
   <%= hidden_field_tag :spot_position, params[:spot_position] || @spot_position %>
 
@@ -19,11 +19,9 @@
   </p>
   <p>
     <%= f.check_box :tos %>
-    <%= f.label :tos, 'Akceptuję regulamin' %>
+    <%= f.label :tos, 'Akceptuję regulamin i politykę prywatności' %>
   </p>
   <p>
     <%= f.submit 'Dodaj' %>
   </p>
 <% end %>
-
-<%= link_to 'Cofnij', root_path %>

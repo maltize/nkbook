@@ -1,0 +1,19 @@
+<h1>Kontakt</h1>
+
+<h5>Masz pytanie, sugestię? Napisz do nas.</h5>
+
+<% form_for(:feedback, @feedback, :url => feedback_index_path) do |f| %>
+  <%= error_messages_for :feedback, :header_message => "Spróbuj ponownie!", :message => "Wiadomość nie została wysłana, ponieważ:" %>
+
+  <p>
+    <%= f.label :username, 'E-mail:' %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :message, 'Treść:' %><br />
+    <%= f.text_area :message %>
+  </p>
+  <p>
+    <%= f.submit 'Wyślij' %>
+  </p>
+<% end %>

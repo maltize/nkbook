@@ -21,9 +21,9 @@
         <div class="grid_5"><%= image_tag 'logo.png' %></div>
         <div class="grid_9">
           <span><%= link_to 'Początek', root_path %></span>
-          <span><%= link_to 'Dlaczego?', '#' %></span>
-          <span><%= link_to 'FAQ', '#' %></span>
-          <span><%= link_to 'Kontakt', '#' %></span>
+          <span><%= link_to 'Dlaczego?', why_path %></span>
+          <span><%= link_to 'FAQ', faq_path %></span>
+          <span><%= link_to 'Kontakt', new_feedback_path %></span>
         </div>
         <div class="grid_1">&nbsp;</div>
       </div>
@@ -57,8 +57,8 @@
     <div id="footer">
       <div>
         <span>Copyright NKBook.pl 2010</span>
-        <span><%= link_to 'Regulamin', '#' %></span>
-        <span><%= link_to 'Prywatność', '#' %></span>
+        <span><%= link_to 'Regulamin', rules_path %></span>
+        <span><%= link_to 'Prywatność', privacy_path %></span>
       </div>
     </div>
 

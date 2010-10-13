@@ -147,6 +147,8 @@ pl:
 
     models:
       profile: "Wizytówka"
+      spot: "Miejsce"
+      feedback: "Wiadomość"
     attributes:
       profile:
         url: "Link do wizytówki"
@@ -158,6 +160,9 @@ pl:
         position: "Pozycja"
         valid_from: "Ważne od"
         valid_to: "Ważne do"
+      feedback:
+        username: "E-mail"
+        message: "Treść"
 
   support:
     array:

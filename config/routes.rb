@@ -2,6 +2,13 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :profiles
 
+  map.resources :feedback
+
+  map.rules   'rules',   :controller => 'static', :action => 'rules'
+  map.privacy 'privacy', :controller => 'static', :action => 'privacy'
+  map.why     'why',     :controller => 'static', :action => 'why'
+  map.faq     'faq',     :controller => 'static', :action => 'faq'
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

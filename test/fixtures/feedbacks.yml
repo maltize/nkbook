@@ -11,11 +11,13 @@
 #
 
 one:
-  username: UserOne
+  id: 1
+  username: one@localhost.lol
   message: MyText
   status: 1
 
 two:
-  username: UserTwo
-  message: MyText
+  id: 2
+  username: two@localhost.lol
+  message: MyText2
   status: 1

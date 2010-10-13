@@ -1,7 +1,5 @@
 <p>
-  <%= link_to 'Link do wizytówki', @profile.url %>
+  <%= link_to 'Link do wizytówki', @profile.url, :target => '_blank' %>
 </p>
 
 <%= @profile.html %>
-
-<%= link_to 'Cofnij', root_path %>
