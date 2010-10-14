@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
 
+  caches_page :index
+
   def index
     @spots = Hash[*Spot.valid.collect { |u| [u.position, u] }.flatten]
   end
@@ -18,6 +20,7 @@ class ProfilesController < ApplicationController
 
     if @profile.save
       flash[:notice] = 'Twoja wizytówka została dodana'
+      expire_page :action => :index 
       redirect_to root_path
     else
       render :action => "new"
