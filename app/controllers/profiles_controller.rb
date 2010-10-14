@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
 
     if @profile.save
       flash[:notice] = 'Twoja wizytówka została dodana'
-      expire_page :action => :index 
+      expire_page "/index"
       redirect_to root_path
     else
       render :action => "new"
