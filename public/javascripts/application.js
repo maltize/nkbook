@@ -35,10 +35,13 @@ function evalScript(scriptStr) {
 document.write = (function () {
   var content = "";
   for (var i = 0; i < arguments.length; i++) {
-    //console.log(arguments[i]);
     content += arguments[i];
-    //$('div#thawte').append(arguments[i]);
   }
-  console.log(content);
-  $(this).parentNode.html(content);
+  $(this.parentNode).html(content);
 });
+
+// document.write = (function () {
+//   for (var i = 0; i < arguments.length; i++) {
+//     $('#someId').append(arguments[i]);
+//   }
+// });
