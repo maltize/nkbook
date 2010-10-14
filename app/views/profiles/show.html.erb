@@ -2,4 +2,7 @@
   <%= link_to 'Link do wizytówki', @profile.url, :target => '_blank' %>
 </p>
 
-<%= @profile.html %>
+<script type="text/javascript">
+  evalScript('<%= escape_javascript(@profile.html) %>');
+</script>
+<div id="widget_"></div>

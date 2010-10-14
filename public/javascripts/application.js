@@ -22,22 +22,26 @@ $(document).ready(function(){
 
   $("div.widget_observer").hoverIntent( configHover );
 
-  function evalScript(scriptStr) {
-    var anonymous_div = $('<div/>');
-    anonymous_div.html(decodeURIComponent(scriptStr));
-
-    anonymous_div.find('script').each(function(el) {
-      var script = document.createElement('script');
-      script.src = $(this).attr('src');
-      document.body.appendChild(script);
-      this.parentNode.removeChild(this);
-      debugger;
-    });
-  }
+  $("div.widget_observer a").click(function() {
+    return false;
+  });
 
 });
 
-var selectedWidget;
+function evalScript(scriptStr) {
+  var anonymous_div = $('<div/>');
+  anonymous_div.html(decodeURIComponent(scriptStr));
+
+  anonymous_div.find('script').each(function(el) {
+    var script = document.createElement('script');
+    script.src = $(this).attr('src');
+    document.body.appendChild(script);
+    this.parentNode.removeChild(this);
+    debugger;
+  });
+}
+
+var selectedWidget = '';
 
 document.write = (function () {
   for (var i = 0; i < arguments.length; i++) {
