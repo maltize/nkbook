@@ -4,13 +4,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>NKBook.pl - Bądź jedną z tysiąca twarzy</title>
-    <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/text.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/960.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/scaffold.css" />
-    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
-    <script type="text/javascript" src="/javascripts/jquery.hoverIntent.min.js"></script>
-    <script type="text/javascript" src="/javascripts/application.js"></script>
+    <%= stylesheet_link_tag "reset", "text", "960", "scaffold", :cache => true, :recursive => true %>
+    <%= javascript_include_tag "jquery.min", "jquery.hoverIntent.min", "application", :cache => true, :recursive => true %>
   </head>
   <body>
 
