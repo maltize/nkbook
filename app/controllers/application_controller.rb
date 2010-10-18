@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   USER_NAME, PASSWORD = "nkbook", "nkbook.123"
 
-  before_filter :authenticate unless RAILS_ENV == 'test'
+  # before_filter :authenticate unless RAILS_ENV == 'test'
 
 private
 
