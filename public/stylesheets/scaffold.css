@@ -8,7 +8,6 @@ body {
 body, p, ol, ul, td {
   font-family: tahoma, verdana, arial, helvetica, sans-serif;
   font-size:   14px;
-  line-height: 18px;
 }
 
 pre {
@@ -80,7 +79,7 @@ table {
 
 #menu .grid_9 {
   text-align: right;
-  padding-top: 30px;
+  padding-top: 16px;
   font-size: 30px;
   font-weight: bold;
   color: #fff;

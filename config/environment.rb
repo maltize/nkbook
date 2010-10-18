@@ -45,6 +45,10 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :pl
 end
 
+def log_to target=STDOUT
+  ActiveRecord::Base.logger = Logger.new(target)
+end
+
 ActionView::Base.field_error_proc = proc { |input, instance| input } 
 
 ExceptionNotifier.exception_recipients = %w(maltize@gmail.com)
