@@ -117,6 +117,13 @@ table {
   background-color: #005CB8;
 }
 
+#banner {
+  text-align: center;
+  background-color: #3399ff;
+  color: #fff;
+  font-size: 14px;
+}
+
 #footer {
   height: 30px;
   padding-top: 8px;
