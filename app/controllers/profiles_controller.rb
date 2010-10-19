@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
 
+  include CacheableFlash
+
   caches_page :index
 
   def index
@@ -19,7 +21,7 @@ class ProfilesController < ApplicationController
     @profile.spot = Spot.new(:duration => 7, :position => params[:spot_position])
 
     if @profile.save
-      flash[:notice] = 'Twoja wizytówka została dodana'
+      flash[:notice] = "<p>Twoja wizytówka została dodana</p>"
       expire_page "/index"
       redirect_to root_path
     else

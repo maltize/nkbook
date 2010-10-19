@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>NKBook.pl - Pokaż się, be cool!</title>
     <%= stylesheet_link_tag "reset", "text", "960", "scaffold", :cache => true, :recursive => true %>
-    <%= javascript_include_tag "jquery.min", "jquery.hoverIntent.min", "application", :cache => true, :recursive => true %>
+    <%= javascript_include_tag "jquery.min", "jquery.hoverIntent.min", "flash", "json", "cookie", "application", :cache => true, :recursive => true %>
 
     <script type="text/javascript">
 
@@ -46,17 +46,7 @@
     </div>
 
     <!-- FLASH MESSAGE -->
-    <div id="flash_message">
-      <% if flash[:notice] %>
-        <p id="flash_notice"><%= flash[:notice] %></p>
-        <% flash[:notice] = nil %>
-      <% end %>
-      <% if flash[:error] %>
-        <p id="flash_error"><%= flash[:error] %></p>
-        <% flash[:error] = nil %>
-      <% end %>
-    </div>
-    <div class="clear"></div>
+    <%= render :partial => 'layouts/flash_message' %>
 
     <!-- CONTENT -->
     <div id="main" class="container_16">

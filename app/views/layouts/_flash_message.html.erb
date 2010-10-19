@@ -1,0 +1,25 @@
+<% unless request.path == '/' %>
+
+  <div id="flash_message">
+    <% if flash[:notice] %>
+      <p id="flash_notice"><%= flash[:notice] %></p>
+      <% flash[:notice] = nil %>
+    <% end %>
+    <% if flash[:error] %>
+      <p id="flash_error"><%= flash[:error] %></p>
+      <% flash[:error] = nil %>
+    <% end %>
+  </div>
+
+<% else %>
+
+  <div id="error_div_id" class="flash flash_error"></div>
+  <div id="notice_div_id" class="flash flash_notice"></div>
+
+  <script type="text/javascript">
+    Flash.transferFromCookies();
+    Flash.writeDataTo('error', $('#error_div_id'));
+    Flash.writeDataTo('notice', $('#notice_div_id'));
+  </script>
+
+<% end %>

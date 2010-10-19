@@ -117,6 +117,26 @@ table {
   background-color: #005CB8;
 }
 
+.flash {
+  text-align: center;
+}
+
+.flash p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 2px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.flash_notice {
+  background-color: #66B3FF;
+}
+
+.flash_error {
+  background-color: #005CB8;
+}
+
 #banner {
   text-align: center;
   background-color: #3399ff;
