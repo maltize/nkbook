@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(params[:profile])
-    @profile.spot = Spot.new(:duration => 7, :position => params[:spot_position])
+    @profile.spot = Spot.new(:duration => 30, :position => params[:spot_position])
 
     if @profile.save
       flash[:notice] = "<p>Twoja wizytówka została dodana</p>"
