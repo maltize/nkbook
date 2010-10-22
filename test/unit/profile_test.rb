@@ -36,13 +36,6 @@ class ProfileTest < ActiveSupport::TestCase
     assert profiles(:one).errors.on(:url)
   end
 
-  def test_validate_format_of_html
-    profiles(:one).html = 'dupa'
-
-    deny profiles(:one).valid?
-    assert profiles(:one).errors.on(:html)
-  end
-
   def test_validate_three_per_user
     spot3 = spots(:two).clone
     spot3.profile = spots(:two).profile

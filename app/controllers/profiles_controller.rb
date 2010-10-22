@@ -25,6 +25,7 @@ class ProfilesController < ApplicationController
       expire_page "/index"
       redirect_to root_path
     else
+      p @profile.errors
       render :action => "new"
     end
   end
