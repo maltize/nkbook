@@ -37,7 +37,6 @@ function evalScript(scriptStr) {
     script.src = $(this).attr('src');
     document.body.appendChild(script);
     this.parentNode.removeChild(this);
-    debugger;
   });
 }
 
