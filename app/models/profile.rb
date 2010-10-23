@@ -16,16 +16,16 @@
 
 class Profile < ActiveRecord::Base
 
-  validates_presence_of :url, :html, :email
+  validates_presence_of :url, :email
   validates_presence_of :spot
   validates_presence_of :tos, :message => 'musi być zatwierdzony'
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_format_of :url,   :with => /http:\/\/nk\.pl\/card\/\d+\/\w+/i
-  validates_format_of :html,  :with => /<script.+src=.+http:\/\/nk\.pl\/card\/js\/\d+\/\w+.+><\/script>/i
   validate :three_per_user, :on => :create
 
   has_one :spot, :dependent => :destroy
 
+  before_create :build_html
   after_create :harvester
 
   STORE_PATH = RAILS_ROOT + '/public/assets/'
@@ -43,6 +43,10 @@ class Profile < ActiveRecord::Base
   end
 
 private
+
+  def build_html
+    self.html = "<script width=\"180\" id=\"nk_card\" type=\"text/javascript\" charset=\"UTF-8\" src=\"#{url.split("card").first + "card/js" + url.split("card").last}\"></script>"
+  end
 
   def harvester
     self.nk_id = url.match(/\/(\d+)\//)[1]
